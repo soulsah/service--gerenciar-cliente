@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  client-db:
+    image: postgres:latest
+    container_name: client-db
+    environment:
+      - POSTGRES_DB=client-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 5432:5432
+
+networks:
+  my-networks:
+    driver: bridge
