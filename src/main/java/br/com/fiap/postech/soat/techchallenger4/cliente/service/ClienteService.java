@@ -11,7 +11,9 @@ public interface ClienteService {
 
     ClienteRecord findClienteById(Long id) throws ClienteNotFoundException;
 
-    ClienteRecord save(ClienteRecord cliente);
-
     void deleteCliente(Long id);
+
+    ClienteRecord updateCliente(Long id, ClienteRecord clienteRecord) throws ClienteNotFoundException;
+
+    ClienteRecord createCliente(ClienteRecord clienteRecord);
 }

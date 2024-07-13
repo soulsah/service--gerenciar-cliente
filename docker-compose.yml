@@ -1,16 +1,30 @@
 version: '3'
 
 services:
-  client-db:
+  cliente:
     image: postgres:latest
-    container_name: client-db
+    container_name: cliente
     environment:
-      - POSTGRES_DB=client-db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=cliente
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres
     ports:
       - 5432:5432
 
+  app:
+    depends_on:
+      - db
+    build: .
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=compose-postgres
+      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8081:8081"
+    networks:
+      - my-networks
+      -
 networks:
   my-networks:
     driver: bridge

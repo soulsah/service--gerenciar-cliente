@@ -2,6 +2,7 @@ package br.com.fiap.postech.soat.techchallenger4.cliente.service.impl;
 
 import br.com.fiap.postech.soat.techchallenger4.cliente.entity.Cliente;
 import br.com.fiap.postech.soat.techchallenger4.cliente.exception.ClienteNotFoundException;
+import br.com.fiap.postech.soat.techchallenger4.cliente.mapper.ClienteMapper;
 import br.com.fiap.postech.soat.techchallenger4.cliente.records.ClienteRecord;
 import br.com.fiap.postech.soat.techchallenger4.cliente.repository.ClienteRepository;
 import br.com.fiap.postech.soat.techchallenger4.cliente.service.ClienteService;
@@ -24,22 +25,44 @@ public class ClienteServiceImpl implements ClienteService {
             throw new ClienteNotFoundException();
         }
         return clientes.stream()
-                .map(ClienteRecord::new)
+                .map(ClienteMapper::mapToRecord)
                 .collect(Collectors.toList());
     }
 
     @Override
     public ClienteRecord findClienteById(Long id) throws ClienteNotFoundException {
-        return null;
+        Cliente cliente = clienteRepository.findById(id)
+                .orElseThrow(ClienteNotFoundException::new);
+        return ClienteMapper.mapToRecord(cliente);
     }
 
     @Override
-    public ClienteRecord save(ClienteRecord cliente) {
-        return null;
+    public ClienteRecord createCliente(ClienteRecord clienteRecord) {
+        Cliente cliente = ClienteMapper.mapFromRecord(clienteRecord);
+        Cliente savedCliente = clienteRepository.save(cliente);
+        return ClienteMapper.mapToRecord(savedCliente);
     }
 
     @Override
-    public void deleteCliente(Long id){
+    public void deleteCliente(Long id) {
+        Cliente cliente = null;
+        try {
+            cliente = clienteRepository.findById(id)
+                    .orElseThrow(ClienteNotFoundException::new);
+        } catch (ClienteNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         clienteRepository.deleteById(id);
     }
+
+    @Override
+    public ClienteRecord updateCliente(Long id, ClienteRecord clienteRecord) throws ClienteNotFoundException {
+        Cliente cliente = clienteRepository.findById(id)
+                .orElseThrow(ClienteNotFoundException::new);
+        cliente.setNome(clienteRecord.nome());
+        cliente.setEmail(clienteRecord.email());
+        Cliente updatedCliente = clienteRepository.save(cliente);
+        return ClienteMapper.mapToRecord(updatedCliente);
+    }
+
 }
