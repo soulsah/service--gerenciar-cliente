@@ -9,7 +9,8 @@ public class ClienteMapper {
         return new ClienteRecord(
                 cliente.getId(),
                 cliente.getNome(),
-                cliente.getEmail()
+                cliente.getEmail(),
+                cliente.getCPF()
         );
     }
 
@@ -17,7 +18,8 @@ public class ClienteMapper {
         return new Cliente(
                 clienteRecord.id(),
                 clienteRecord.nome(),
-                clienteRecord.email()
+                clienteRecord.email(),
+                clienteRecord.CPF()
         );
     }
 }

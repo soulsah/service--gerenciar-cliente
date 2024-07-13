@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Data
 @NoArgsConstructor
@@ -22,4 +23,7 @@ public class Cliente {
 
     @NotEmpty(message = "Email não pode estar vazio")
     private String email;
+
+    @CPF(message="cpf inválido")
+    private String CPF;
 }
