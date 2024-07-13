@@ -1,0 +1,10 @@
+br/com/fiap/postech/soat/techchallenger4/cliente/exception/ClienteNotFoundException.class
+br/com/fiap/postech/soat/techchallenger4/cliente/controller/ClienteController.class
+br/com/fiap/postech/soat/techchallenger4/cliente/records/ClienteRecord.class
+br/com/fiap/postech/soat/techchallenger4/cliente/exception/CustomExceptionHandler.class
+br/com/fiap/postech/soat/techchallenger4/cliente/service/impl/ClienteServiceImpl.class
+br/com/fiap/postech/soat/techchallenger4/cliente/repository/ClienteRepository.class
+br/com/fiap/postech/soat/techchallenger4/cliente/Techchallenger4Application.class
+br/com/fiap/postech/soat/techchallenger4/cliente/entity/Cliente.class
+br/com/fiap/postech/soat/techchallenger4/cliente/mapper/ClienteMapper.class
+br/com/fiap/postech/soat/techchallenger4/cliente/service/ClienteService.class

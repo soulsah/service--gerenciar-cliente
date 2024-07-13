@@ -1,0 +1,10 @@
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/Techchallenger4Application.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/controller/ClienteController.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/entity/Cliente.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/exception/ClienteNotFoundException.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/exception/CustomExceptionHandler.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/mapper/ClienteMapper.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/records/ClienteRecord.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/repository/ClienteRepository.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/service/ClienteService.java
+/home/qrd/Danilo/service--gerenciar-cliente/src/main/java/br/com/fiap/postech/soat/techchallenger4/cliente/service/impl/ClienteServiceImpl.java
