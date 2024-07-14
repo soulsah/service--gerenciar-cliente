@@ -24,6 +24,6 @@ public class Cliente {
     @NotEmpty(message = "Email não pode estar vazio")
     private String email;
 
-    @CPF(message="cpf inválido")
-    private String CPF;
+    @NotEmpty(message = "CPF não pode estar vazio")
+    private String cpf;
 }

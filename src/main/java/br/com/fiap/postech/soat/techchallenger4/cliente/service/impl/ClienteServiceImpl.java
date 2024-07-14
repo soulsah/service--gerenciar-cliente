@@ -61,7 +61,7 @@ public class ClienteServiceImpl implements ClienteService {
                 .orElseThrow(ClienteNotFoundException::new);
         cliente.setNome(clienteRecord.nome());
         cliente.setEmail(clienteRecord.email());
-        cliente.setCPF(clienteRecord.CPF());
+        cliente.setCpf(clienteRecord.cpf());
         Cliente updatedCliente = clienteRepository.save(cliente);
         return ClienteMapper.mapToRecord(updatedCliente);
     }
