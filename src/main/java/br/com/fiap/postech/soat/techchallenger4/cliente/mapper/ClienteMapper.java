@@ -10,7 +10,9 @@ public class ClienteMapper {
                 cliente.getId(),
                 cliente.getNome(),
                 cliente.getEmail(),
-                cliente.getCpf()
+                cliente.getCpf(),
+                cliente.getEndereco(),
+                cliente.getTelefone()
         );
     }
 
@@ -19,7 +21,9 @@ public class ClienteMapper {
                 clienteRecord.id(),
                 clienteRecord.nome(),
                 clienteRecord.email(),
-                clienteRecord.cpf()
+                clienteRecord.cpf(),
+                clienteRecord.endereco(),
+                clienteRecord.telefone()
         );
     }
 }

@@ -26,4 +26,10 @@ public class Cliente {
 
     @NotEmpty(message = "CPF não pode estar vazio")
     private String cpf;
+
+    @NotEmpty(message = "Telefone não pode estar vazio")
+    private String telefone;
+
+    @NotEmpty(message = "Endereco não pode estar vazio")
+    private String endereco;
 }

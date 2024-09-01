@@ -9,14 +9,14 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=admin
     ports:
-      - 5432:5432
+      - 5436:5432
 
   app:
     depends_on:
       - postgres
     build: .
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/cliente
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5436/cliente
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
